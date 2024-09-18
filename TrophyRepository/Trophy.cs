@@ -15,8 +15,8 @@
         {
             if (Competition == null)
                 throw new ArgumentNullException("Competition is null " +  Competition);
-            if (Competition == "")
-                throw new ArgumentException("Competition is empty " +  Competition);
+            if (Competition.Length < 3)
+                throw new ArgumentException("Competition is too short " +  Competition);
         }
         public void ValidateYear()
         {

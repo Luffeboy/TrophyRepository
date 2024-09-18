@@ -36,8 +36,10 @@ namespace TrophyRepository.Tests
             trophy.ValidateCompetition();
             trophy.Competition = null;
             Assert.ThrowsException<ArgumentNullException>(() => trophy.ValidateCompetition());
-            trophy.Competition = "";
+            trophy.Competition = "12";
             Assert.ThrowsException<ArgumentException>(() => trophy.ValidateCompetition());
+            trophy.Competition = "123";
+            trophy.ValidateCompetition();
         }
 
         [TestMethod()]
