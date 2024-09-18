@@ -36,10 +36,7 @@ namespace TrophyRepository
         {
             if (yearMin != null && yearMax != null && yearMin > yearMax)
                 throw new ArgumentException("yearMin must be lower that yearMax");
-            //IEnumerable<Trophy> trophies = new List<Trophy>(_trophies);
             IEnumerable<Trophy> trophies = _trophies;
-            //if (yearMin != null && yearMax != null)
-            //    trophies = _trophies.Where((t) => { return t.Year >= yearMin && t.Year <= yearMax; }).ToList();
             if (yearMin != null)
                 trophies = trophies.Where((t) => { return t.Year >= yearMin; });
             if (yearMax != null)
@@ -96,10 +93,5 @@ namespace TrophyRepository
             trophy.Year = values.Year;
             return trophy;
         }
-
-        /*
-    Trophy objektet med det angivne id opdateres med values.
-    Returnerer det opdaterede Trophy objekt - eller null.
-         */
     }
 }
